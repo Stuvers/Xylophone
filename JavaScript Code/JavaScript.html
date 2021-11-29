@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+	<script src="myScript.js"></script>
+</head>
+<body>
+	<div id="body">
+		<h2> Play some music </h2>
+
+		<p id="paragraph"> Click each seperate square for a note on the xylophone </p>
+
+		<div id="xylophone">
+			<div id="C1" class="note" onclick="HitBar('C1')">
+				<div class="topCircle"> 
+				</div>
+					<p> 1 - C </p> 
+				<div class="botCircle"> 
+				</div>
+			</div>
+			<div id="D2" class="note" onclick="HitBar('D2')">
+				<div class="topCircle"> 
+				</div>
+					<p> 2 - D </p> 
+				<div class="botCircle"> 
+				</div>
+			</div>
+			<div id="E3" class="note" onclick="HitBar('E3')">
+				<div class="topCircle"> 
+				</div>
+					<p> 3 - E </p> 
+				<div class="botCircle"> 
+				</div>
+			</div>
+			<div id="F4" class="note" onclick="HitBar('F4')">
+				<div class="topCircle"> 
+				</div>
+					<p> 4 - F </p> 
+				<div class="botCircle"> 
+				</div>
+			</div>
+			<div id="G5" class="note" onclick="HitBar('G5')">
+				<div class="topCircle"> 
+				</div>
+					<p> 5 - G </p> 
+				<div class="botCircle"> 
+				</div>
+			</div>
+			<div id="A6" class="note" onclick="HitBar('A6')">
+				<div class="topCircle"> 
+				</div>
+					<p> 6 - A </p> 
+				<div class="botCircle"> 
+				</div>
+			</div>
+			<div id="B7" class="note" onclick="HitBar('B7')">
+				<div class="topCircle"> 
+				</div>
+					<p> 7 - B </p> 
+				<div class="botCircle">
+				</div>
+			</div>
+			<div id="C8" class="note" onclick="HitBar('C8')">
+				<div class="topCircle"> 
+				</div>
+					<p> 8 - C </p> 
+				<div class="botCircle"> 
+				</div>
+			</div>
+		</div>
+		<div id="songs"></div>
+		<button id="recording" onclick="toggleRecording()"> Start Recording! </button>
+	</div>
+</body>
+</html>

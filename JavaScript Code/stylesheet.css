@@ -1,0 +1,88 @@
+*{
+	border: 0px;
+	padding: 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+#xylophone {
+    background-color:white;
+    color: white;
+    margin: 10% 0% 0% 10%;
+    position: relative;
+}
+
+body {
+    background-color: orange;
+    height: 500px;
+    width: 100%;
+}
+#body {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border : 10px solid white;
+    margin: 0;
+}
+
+.note {
+    height: 150px;
+    width: 50px;
+    float: left;
+    margin: 0px 0px 0px 5px;
+    border-radius: 5px;
+    border: 5px solid black;
+    cursor:pointer;
+}
+
+#C1 {
+    background-color: blue;
+}
+
+#D2 {
+    background-color: yellow;
+}
+
+#E3 {
+    background-color: Green;
+}
+
+#F4 {
+    background-color: red;
+}
+
+#G5 {
+    background-color: orange;
+}
+
+#A6 {
+    background-color: cyan;
+}
+
+#B7 {
+    background-color: orchid;
+}
+
+#C8 {
+    background-color: blueviolet;
+}
+
+.topCircle {
+    background-color: lightgrey;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin: 25% 0% 0% 35%;
+}
+
+.botCircle {
+    background-color: lightgrey;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin: 140% 0% 0% 35%;
+}
+
+.Recording {
+    cursor: pointer;
+}
