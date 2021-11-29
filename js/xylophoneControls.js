@@ -44,35 +44,35 @@ function HitBar(note) {
 	}
 
 	if (note == "C1") {
-		audio = new Audio("..\\music\\xylophone-c.wav");
+		audio = new Audio("music\\xylophone-c.wav");
 		audio.play();
 	}
 	else if (note == "D2") {
-		audio = new Audio("..\\music\\xylophone-d1.wav");
+		audio = new Audio("music\\xylophone-d1.wav");
 		audio.play();
 	}
 	else if (note == "E3") {
-		audio = new Audio("..\\music\\xylophone-e1.wav");
+		audio = new Audio("music\\xylophone-e1.wav");
 		audio.play();
 	}
 	else if (note == "F4") {
-		audio = new Audio("..\\music\\xylophone-f.wav");
+		audio = new Audio("music\\xylophone-f.wav");
 		audio.play();
 	}
 	else if (note == "G5") {
-		audio = new Audio("..\\music\\xylophone-g.wav");
+		audio = new Audio("music\\xylophone-g.wav");
 		audio.play();
 	}
 	else if (note == "A6") {
-		audio = new Audio("..\\music\\xylophone-a.wav");
+		audio = new Audio("music\\xylophone-a.wav");
 		audio.play();
 	}
 	else if (note == "B7") {
-		audio = new Audio("..\\music\\xylophone-b.wav");
+		audio = new Audio("music\\xylophone-b.wav");
 		audio.play();
 	}
 	else if (note == "C8") {
-		audio = new Audio("..\\music\\xylophone-c2.wav");
+		audio = new Audio("music\\xylophone-c2.wav");
 		audio.play();
 	}	
 }
