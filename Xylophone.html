@@ -3,12 +3,14 @@
 <head>
 	<link href="css\stylesheet.css" type="text/css" rel="stylesheet" />
 	<script src="js\xylophoneControls.js"></script>
+	<title> Xylophone </title>
 </head>
 <body>
-	<div id="body">
-		<h2> Play some music </h2>
+	<div class="header">
+		<h1> Play The Xylophone </h1>
 		<p id="paragraph"> Click each seperate square for a note on the xylophone </p>
-
+	</div> 
+	<div class="content">
 		<div id="xylophone">
 			<div id="C1" class="note" onclick="HitBar('C1')">
 				<div class="topCircle"> 
@@ -67,8 +69,9 @@
 				</div>
 			</div>
 		</div>
+		<button id="record" onclick="toggleRecording()"> Start Recording! </button>
 		<div id="songs"></div>
-		<button id="recording" onclick="toggleRecording()"> Start Recording! </button>
 	</div>
+	<div id="footer"></div> 
 </body>
 </html>

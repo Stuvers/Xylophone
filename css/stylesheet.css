@@ -1,38 +1,71 @@
-*{
-	border: 0px;
-	padding: 0px;
-	margin: 0px 0px 0px 0px;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+p {
+    color: #000000;
+}
+
+#paragraph {
+    color: #FFFFFF;
 }
 
 #xylophone {
-    background-color:white;
     color: white;
-    margin: 10% 0% 0% 10%;
-    position: relative;
+    margin: 10px 0% 0% 10px;
+    display: inline-block;
 }
 
 body {
-    background-color: orange;
-    height: 500px;
-    width: 100%;
-}
-#body {
-    background-color: white;
+    background-color:#efb52b;
     height: 100%;
     width: 100%;
-    border-radius: 50%;
-    border : 10px solid white;
-    margin: 0;
+}
+
+.content {
+    display: block;
+}
+
+.header {
+    height: 25%;
+    display: block;
+    background-color: #016a66;
+    color: #f6ebf9;
+    border-bottom: 2px solid #fdd9b5;
+    padding: 12px 12px 12px 12px;
 }
 
 .note {
     height: 150px;
     width: 50px;
-    float: left;
     margin: 0px 0px 0px 5px;
     border-radius: 5px;
     border: 5px solid black;
-    cursor:pointer;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.note p {
+    margin: 0px 0px 0px 10px;
+    color: #FFFFFF;
+    display: inline-block;
 }
 
 #C1 {
@@ -73,6 +106,7 @@ body {
     width: 15px;
     border-radius: 100%;
     margin: 25% 0% 0% 35%;
+    display: inline-block;
 }
 
 .botCircle {
@@ -81,8 +115,20 @@ body {
     width: 15px;
     border-radius: 100%;
     margin: 140% 0% 0% 35%;
+    display: inline-block;
 }
 
-.Recording {
+#record {
     cursor: pointer;
+    display: block;
+    margin: 10px 0 0 10px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+#songs {
+    display: inline-block;
+    height: 50px;
 }

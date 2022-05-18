@@ -9,10 +9,13 @@ const maxSongs = 9;
 const maxNotes = 9;
 
 function toggleRecording() {
+	let recording = document.getElementById("recording");
+	let songs = document.getElementById("songs")
+
 	if (!isRecording)
 	{
 		isRecording = true;
-		document.getElementById("recording").innerHTML = "Stop Recording!";
+		recording.innerHTML = "Stop Recording!";
 	}
 	else
 	{
@@ -20,11 +23,14 @@ function toggleRecording() {
 		songList.push([noteList]);
 		noteList = [];
 		console.log(songList);
-		for (let i = 0; i < songList.length; i++)
-		{
-			document.getElementById("paragraph").innerHTML = "\n" + songList[i];
-			document.getElementById("recording").innerHTML = "Start Recording!";
+		
+		let content = "";
+		for (let i = 0; i < songList.length; i++) {
+			content += `${i + 1}. ${songList[i]}. <br>`;
 		}
+	    
+		songs.innerHTML = content;
+		recording.innerHTML = "Start Recording!";
 	}
 }
 
