@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -31,6 +33,8 @@ p {
     color: white;
     margin: 10px 0% 0% 10px;
     display: inline-block;
+    background-color: #654321;
+    border:#000000 solid 5px;
 }
 
 body {
@@ -50,12 +54,19 @@ body {
     color: #f6ebf9;
     border-bottom: 2px solid #fdd9b5;
     padding: 12px 12px 12px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.header h1 {
+    font-weight: 600;
+    font-size: 24px;
 }
 
 .note {
     height: 150px;
     width: 50px;
-    margin: 0px 0px 0px 5px;
+    margin: 2px 2px 2px 2px;
     border-radius: 5px;
     border: 5px solid black;
     cursor: pointer;
@@ -66,6 +77,10 @@ body {
     margin: 0px 0px 0px 10px;
     color: #FFFFFF;
     display: inline-block;
+}
+
+.note:active {
+    border: 5px solid #654321;
 }
 
 #C1 {
