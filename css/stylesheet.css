@@ -144,6 +144,19 @@ body {
 }
 
 #songs {
-    display: inline-block;
+    display: block;
     height: 50px;
+    margin: 10px 0 0 10px;
+}
+
+.singleSong {
+    height: 20px;
+    display: inline;
+    color: black;
+}
+
+.play {
+    height: 20px;
+    display: inline;
+    padding: 5px;
 }

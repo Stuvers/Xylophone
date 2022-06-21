@@ -1,8 +1,10 @@
-// @Stuvers #task 
+// @Stuvers #task
+"use strict"; 
 var isRecording = false;
-var notes = [];
+var musicNotes = [];
 var songList = [];
 var noteList = [];
+var songNo = 0;
 
 //note class
 class Note {
@@ -19,24 +21,49 @@ class Note {
 	}
 }
 
+class Song {
+	constructor(id, name, notes) {
+		this.id = id;
+		this.name = name;
+		this.notes = notes;
+	}
+
+	playSong() {
+
+		for (let note of this.notes)
+		{
+			playNote(note);
+			console.log(note + " inside play song");
+
+			let now = Date.now();
+      		let end = now + 1000;
+			
+  			while (now < end) 
+			{ 
+				now = Date.now(); 
+			}
+		}
+	}
+}
+
 function createNotes()
 {
 	// C1 note
-	notes[0] = new Note(1, "C1", "music\\xylophone-c.wav", "music\\xylophone-c.wav");
+	musicNotes[0] = new Note(1, "C1", "music\\xylophone-c.wav", "music\\xylophone-c.wav");
 	// D2 note
-	notes[1] = new Note(2, "D2", "music\\xylophone-d1.wav", "music\\xylophone-d1.wav");
+	musicNotes[1] = new Note(2, "D2", "music\\xylophone-d1.wav", "music\\xylophone-d1.wav");
 	// E3 note
-	notes[2] = new Note(3, "E3", "music\\xylophone-e1.wav", "music\\xylophone-e1.wav");
+	musicNotes[2] = new Note(3, "E3", "music\\xylophone-e1.wav", "music\\xylophone-e1.wav");
 	// F4 note
-	notes[3] = new Note(4, "F4", "music\\xylophone-f.wav", "music\\xylophone-f.wav");
+	musicNotes[3] = new Note(4, "F4", "music\\xylophone-f.wav", "music\\xylophone-f.wav");
 	// G5 note
-	notes[4] = new Note(5, "G5", "music\\xylophone-g.wav", "music\\xylophone-g.wav");
+	musicNotes[4] = new Note(5, "G5", "music\\xylophone-g.wav", "music\\xylophone-g.wav");
 	// A6 note
-	notes[5] = new Note(6, "A6", "music\\xylophone-a.wav", "music\\xylophone-a.wav");
+	musicNotes[5] = new Note(6, "A6", "music\\xylophone-a.wav", "music\\xylophone-a.wav");
 	// B7 note
-	notes[6] = new Note(7, "B7", "music\\xylophone-b.wav", "music\\xylophone-b.wav");
+	musicNotes[6] = new Note(7, "B7", "music\\xylophone-b.wav", "music\\xylophone-b.wav");
 	// C8 note
-	notes[7] = new Note(8, "C8", "music\\xylophone-c2.wav", "music\\xylophone-c2.wav");	
+	musicNotes[7] = new Note(8, "C8", "music\\xylophone-c2.wav", "music\\xylophone-c2.wav");	
 }
 
 // This will eventually be the max allowed songs and notes
@@ -46,27 +73,46 @@ const maxNotes = 9;
 
 function toggleRecording() {
 	let record = document.getElementById("record");
-	let songs = document.getElementById("songs")
 
 	if (!isRecording)
 	{
+		noteList = [];
 		isRecording = true;
 		record.innerHTML = "Stop Recording!";
 	}
 	else
-	{
-		isRecording = false;
-		songList.push([noteList]);
-		noteList = [];
-		console.log(songList);
-		
+	{	
 		let content = "";
-		for (let i = 0; i < songList.length; i++) {
-			content += `${i + 1}. ${songList[i]}. <br>`;
-		}
-	    
-		songs.innerHTML = content;
+
+		isRecording = false;
+		let song = new Song(songNo, "Recording " + songNo , noteList);
+		songList.push(song);
+		songNo++;
+
+		UpdateSongList();		
+
 		record.innerHTML = "Start Recording!";
+		songNo = songNo++;
+	}
+}
+
+function UpdateSongList()
+{
+	let songs = document.getElementById("songs");
+	songs.innerHTML = null;
+
+	for (let curSong of songList) {
+		let paragraph = document.createElement("div");
+		paragraph.className = "singleSong";
+		paragraph.id = curSong.name;
+		paragraph.innerHTML = `<p> ${curSong.id + 1}. ${curSong.notes}. </p>`;
+		songs.appendChild(paragraph);
+		let button = document.createElement("button");
+		button.innerHTML = "Play Song";
+		button.className = "play";
+		button.value = curSong.id;
+		button.onclick = function() { playSong(curSong.id) };
+		songs.appendChild(button);
 	}
 }
 
@@ -78,7 +124,7 @@ function HitBar(note) {
 	}
 	else if (noteList.length == maxNotes && isRecording)
 	{
-		noteList.push(note);
+		noteList.push(getNote(note));
 		toggleRecording();
 		console.log("=10 " + noteList.length);
 	}
@@ -87,10 +133,26 @@ function HitBar(note) {
 }
 
 function playNote(note) {
-	for (let curNote of notes) {
+	for (let curNote of musicNotes) {
 		if (curNote.note === note)
 		{
 			curNote.playAudio();
 		}
 	}
+}
+
+function getNote(note) {
+	let retNote = null;
+	for (let curNote of musicNotes) {
+		if (curNote.note === note)
+		{
+			retNote = curNote;
+		}
+	}
+
+	return retNote;
+}
+
+function playSong(id) {
+	songList[id].playSong();
 }
